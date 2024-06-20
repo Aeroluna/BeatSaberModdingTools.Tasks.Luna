@@ -1,4 +1,4 @@
-﻿<!-- 
+﻿<!--
   This file is automatically imported by NuGet into a user's project
   when it targets a single framework, or in classic (pre 2017) csproj projects.
 -->
@@ -14,7 +14,7 @@
         <BSMTTaskFolder Condition="!$(IsNetCoreApp)">net46</BSMTTaskFolder>
         <BSMTTaskFolder>netstandard2.0</BSMTTaskFolder>
         -->
-        <BSMTTaskAssembly>$(MSBuildThisFileDirectory)..\tasks\$(BSMTTaskFolder)\BeatSaberModdingTools.Tasks.dll</BSMTTaskAssembly>
+        <BSMTTaskAssembly>$(MSBuildThisFileDirectory)..\tasks\$(BSMTTaskFolder)\BeatSaberModdingTools.Tasks.Luna.dll</BSMTTaskAssembly>
         <BSMT_ImportOverridden Condition="'$(BuildTargetsVersion)' != '' AND '$(ImportBSMTTargets)' != 'False'">True</BSMT_ImportOverridden>
         <ImportBSMTTargets Condition="'$(BSMT_ImportOverridden)' != 'True' AND '$(ImportBSMTTargets)' == ''">true</ImportBSMTTargets>
     </PropertyGroup>

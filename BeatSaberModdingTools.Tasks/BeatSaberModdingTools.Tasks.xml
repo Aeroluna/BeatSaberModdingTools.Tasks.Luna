@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>BeatSaberModdingTools.Tasks</name>
+        <name>BeatSaberModdingTools.Tasks.Luna</name>
     </assembly>
     <members>
         <member name="T:BeatSaberModdingTools.Tasks.CompareVersions">

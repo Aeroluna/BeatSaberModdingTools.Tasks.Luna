@@ -1,16 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <id>BeatSaberModdingTools.Tasks</id>
-        <Title>BeatSaberModdingTools.Tasks</Title>
-        <Version>2.0.0-beta7</Version>
-        <Authors>Zingabopp</Authors>
+        <id>BeatSaberModdingTools.Tasks.Luna</id>
+        <Title>BeatSaberModdingTools.Tasks.Luna</Title>
+        <Version>2.1.0</Version>
+        <Authors>Zingabopp, Aeroluna</Authors>
         <Company>Zingabopp</Company>
         <Description>A set of MSBuild Tasks created for Beat Saber Modding Tools.</Description>
         <Copyright>Copyright © Zingabopp 2020</Copyright>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <RepositoryType>git</RepositoryType>
-        <PackageProjectUrl>https://github.com/Zingabopp/BeatSaberModdingTools.Tasks</PackageProjectUrl>
-        <RepositoryUrl>https://github.com/Zingabopp/BeatSaberModdingTools.Tasks.git</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/Aeroluna/BeatSaberModdingTools.Tasks.Luna</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/Aeroluna/BeatSaberModdingTools.Tasks.Luna.git</RepositoryUrl>
         <LangVersion>8</LangVersion>
     </PropertyGroup>
 
@@ -21,7 +21,7 @@
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
         <RootNamespace>BeatSaberModdingTools.Tasks</RootNamespace>
-        <AssemblyName>BeatSaberModdingTools.Tasks</AssemblyName>
+        <AssemblyName>BeatSaberModdingTools.Tasks.Luna</AssemblyName>
         <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
         <IsPackable>true</IsPackable>
         <IsTestProject>false</IsTestProject>
@@ -56,8 +56,8 @@
 
     <ItemGroup>
         <None Include="package_readme.md" Pack="true" PackagePath="\" />
-        <Content Include="BeatSaberModdingTools.Tasks.TargetFramework.props" Pack="true" PackagePath="build\BeatSaberModdingTools.Tasks.props" />
-        <Content Include="BeatSaberModdingTools.Tasks.targets" Pack="true" PackagePath="build\BeatSaberModdingTools.Tasks.targets" />
+        <Content Include="BeatSaberModdingTools.Tasks.TargetFramework.props" Pack="true" PackagePath="build\BeatSaberModdingTools.Tasks.Luna.props" />
+        <Content Include="BeatSaberModdingTools.Tasks.targets" Pack="true" PackagePath="build\BeatSaberModdingTools.Tasks.Luna.targets" />
         <Content Include="BSMT.RequiredTargets.targets">
             <PackagePath>build\BSMT.RequiredTargets.targets</PackagePath>
             <Pack>true</Pack>
