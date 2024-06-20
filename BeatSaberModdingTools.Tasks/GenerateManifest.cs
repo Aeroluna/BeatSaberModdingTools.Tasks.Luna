@@ -107,6 +107,10 @@ namespace BeatSaberModdingTools.Tasks
         /// If true, manifest validation will fail if BSIPA isn't listed as a DependsOn.
         /// </summary>
         public bool RequiresBsipa { get; set; } = true;
+        /// <summary>
+        /// If true, appends the game version to the version, e.g. 0.0.1+1.29.1
+        /// </summary>
+        public bool AppendGameVersion { get; set; }
         #endregion
 
         #region Outputs
@@ -207,6 +211,16 @@ namespace BeatSaberModdingTools.Tasks
                 TargetPath = "manifest.json";
             SetRequiredProperties(manifest);
             SetOptionalProperties(manifest);
+            if (AppendGameVersion)
+            {
+                if (manifest.Version.Contains("+"))
+                {
+                    throw new ArgumentException("Cannot append game version to a version that already has build metadata"
+                        , nameof(Version));
+                }
+
+                manifest.Version += $"+{manifest.GameVersion}";
+            }
             return manifest;
         }
 

@@ -45,8 +45,8 @@
                           ProjectSource="$(ProjectSource)" ProjectHome="$(ProjectHome)" Donate="$(Donate)"
                           Features="$(PluginFeatures)" Misc="$(PluginMisc)" PluginHint="$(PluginHint)"
                           BaseManifestPath="$(ManifestPath)" TargetPath="$(IntermediateOutputPath)manifest.json"
-                          RequiresBsipa="$(RequiresBsipa)">
-            <Output TaskParameter="PluginVersion" PropertyName="PluginVersion" />   
+                          RequiresBsipa="$(RequiresBsipa)" AppendGameVersion="$(AppendGameVersion)">
+            <Output TaskParameter="PluginVersion" PropertyName="PluginVersion" />
             <Output TaskParameter="BasePluginVersion" PropertyName="BasePluginVersion" />
             <Output TaskParameter="GameVersion" PropertyName="GameVersion" />
         </GenerateManifest>
