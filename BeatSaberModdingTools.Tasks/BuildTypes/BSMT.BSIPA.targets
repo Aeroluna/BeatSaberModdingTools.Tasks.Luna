@@ -142,7 +142,8 @@
         <Message Text="      ArtifactName= '$(ArtifactName)'" Importance="high" />
     </Target>
     <!--Creates a BeatMods compliant zip file with the release.-->
-    <Target Name="BSMT_ZipRelease" AfterTargets="Build" DependsOnTargets="BSMT_AfterBuild;CopyToArtifactDestination" Condition="'$(DisableZipRelease)' != 'True' AND '$(Configuration)' == 'Release'">
+    <!--Original target only runs on "Release" configuration, this is modified to look for the "RELEASE" constant instead-->
+    <Target Name="BSMT_ZipRelease" AfterTargets="Build" DependsOnTargets="BSMT_AfterBuild;CopyToArtifactDestination" Condition="'$(DisableZipRelease)' != 'True' AND $([System.Text.RegularExpressions.Regex]::IsMatch($(DefineConstants), '^(.*;)*RELEASE(;.*)*$'))">
         <Message Text="Target: BSMT_ZipRelease" Importance="high" />
         <PropertyGroup>
             <!--Set 'ArtifactName' if it failed before.-->
