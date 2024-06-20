@@ -120,8 +120,10 @@
     </Target>
     <Target Name="CopyToArtifactDestination" AfterTargets="Build" DependsOnTargets="BSMT_AfterBuild;BSMT_SetOutputs">
         <Message Text="Target: CopyToArtifactDestination | ArtifactDestination: '$(ArtifactDestination)'" Importance="high" />
-        <Message Text="   Copying '%(OutputCopy.Identity)' to '$(ArtifactDestination)\%(OutputCopy.OutputPath)'." Importance="high" />
-        <Copy SourceFiles="%(OutputCopy.Identity)" DestinationFiles="$(ArtifactDestination)\%(OutputCopy.OutputPath)" />
+        <Message Text="   Deleting '$(ArtifactDestination)'." Importance="high" />
+        <RemoveDir Directories="$(ArtifactDestination)" />
+        <Message Text="   Copying '%(OutputCopy.Identity)' to '$(ArtifactDestination)\%(OutputCopy.OutputPath)'." Importance="high" Condition="'%(OutputCopy.Extension)' != '.pdb' OR '$(ZipPDB)' == 'True'" />
+        <Copy SourceFiles="%(OutputCopy.Identity)" DestinationFiles="$(ArtifactDestination)\%(OutputCopy.OutputPath)" Condition="'%(OutputCopy.Extension)' != '.pdb' OR '$(ZipPDB)' == 'True'" />
     </Target>
     <!--Build target for Continuous Integration builds. Set up for GitHub Actions.-->
     <Target Name="BSMT_OutputForCI" AfterTargets="Build" DependsOnTargets="BSMT_GetProjectInfo;BSMT_AfterBuild;CopyToArtifactDestination" Condition="'$(ContinuousIntegrationBuild)' == 'True'">
