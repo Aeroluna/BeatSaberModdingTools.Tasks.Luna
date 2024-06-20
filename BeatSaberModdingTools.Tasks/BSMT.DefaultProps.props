@@ -17,4 +17,13 @@
     <PropertyGroup Condition="'$(NCrunch)' == '1'">
         <ContinuousIntegrationBuild Condition="'$(ContinuousIntegrationBuild)' == ''">false</ContinuousIntegrationBuild>
     </PropertyGroup>
+
+    <!--Hide custom itemgroups used by GenerateManifest-->
+    <ItemDefinitionGroup>
+        <DependsOn Visible="False" />
+        <ConflictsWith Visible="False" />
+        <Files Visible="False" />
+        <LoadBefore Visible="False" />
+        <LoadAfter Visible="False" />
+    </ItemDefinitionGroup>
 </Project>
